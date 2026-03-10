@@ -1,0 +1,36 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kompass
+  namespace: argocd
+
+spec:
+  project: default
+
+  sources:
+
+  # Source 1 — Kompass Helm chart
+  - chart: kompass
+    repoURL: https://zesty-co.github.io/kompass
+    targetRevision: 0.1.127
+    helm:
+      releaseName: kompass
+      valueFiles:
+        - $values/kompass/values.yaml
+
+  # Source 2 — your Git repo containing the values file
+  - repoURL: https://github.com/ilyapisatzkov-zesty/argo-demo.git
+    targetRevision: main
+    ref: values
+
+  destination:
+    name: ilya-argocd-workload
+    namespace: zesty-system
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true
