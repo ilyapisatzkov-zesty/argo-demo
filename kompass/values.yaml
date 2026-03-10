@@ -1,0 +1,60 @@
+global:
+  storageClassName: "ebs-csi-default-sc"
+  cxLogging:
+    enabled: true
+    clusterName: ""
+    apiKey: "cxtp_tN3LdvUs4oAdjUV3khRuaQ29x12xKp"
+
+kompass-insights:
+  orgID: "3863721556980"
+  encryptedCredentials: "gAAAAABn0VQFtlGdwQrsscmAPpsiCyrGzpBjZbHJBvOHoHI1Stp5KRgBjVKeUrC8EnDvBuYwzuQjxttuOteTKkX3ZOzpR4ovZ1QDwDEPPo0Q-YRGL8lQgTYPeuCVxJUtJZ8tZXLHY60uzciESTe5P6gBSQD5JexFn1s4bcp1NyK6ZbWFshWhmjEGCY3f9NL4foz8c34uBfnyh-EB7ySs_2nE8VbFrxyDWA=="
+
+  persistence:
+    spec:
+      storageClassName: "ebs-csi-default-sc"
+
+  awsCluster:
+    enabled: false
+
+  cxLogging:
+    enabled: true
+    clusterName: ""
+    apiKey: "cxtp_tN3LdvUs4oAdjUV3khRuaQ29x12xKp"
+
+  assumeRole:
+    enabled: true
+    roleArn: "arn:aws:iam::695214758399:role/ZestyIamRole_2026-02-12_1770894413"
+    zestyExternalID: "7a4b5288-30c4-56a8-7f29-0fb4a1df6570"
+    admission:
+    cxLogging:
+      apiKey: "cxtp_tN3LdvUs4oAdjUV3khRuaQ29x12xKp"
+
+  
+
+
+victoriaMetrics:
+  enabled: true
+  server:
+    persistentVolume:
+      storageClassName: "ebs-csi-default-sc"
+
+victoriaMetricsCluster:
+  enabled: false
+  vmstorage:
+    persistentVolume:
+      storageClassName: "ebs-csi-default-sc"
+
+victoriaMetricsAuth:
+  enabled: true
+  # Set to `true` to use VM Single, set to `false` to use VM Cluster.
+  useSingle: true
+
+kubeStateMetrics:
+  enabled: true
+
+grafana:
+  enabled: true
+  persistentVolume:
+    storageClassName: "ebs-csi-default-sc"
+cert-manager:
+  enabled: true
