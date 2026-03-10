@@ -30,7 +30,8 @@ kompass-insights:
       apiKey: "cxtp_tN3LdvUs4oAdjUV3khRuaQ29x12xKp"
 
   
-
+rightsizing:
+  enabled: true
 
 victoriaMetrics:
   enabled: true
