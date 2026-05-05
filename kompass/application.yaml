@@ -12,7 +12,7 @@ spec:
   # Source 1 — Kompass Helm chart
   - chart: kompass
     repoURL: https://zesty-co.github.io/kompass
-    targetRevision: 0.1.127
+    targetRevision: 0.2.11
     helm:
       releaseName: kompass
       valueFiles:
